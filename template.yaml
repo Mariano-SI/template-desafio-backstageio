@@ -53,15 +53,16 @@ spec:
       input:
         repoUrl: ${{ parameters.repoUrl }}
         description: This is ${{ parameters.projectName }}
+        defaultBranch: master
     
     - id: create-custom-branches
       name: Create Custom Branches
       action: azure-repos:branches:create
       input:
-        branchNames: ['main', 'develop', 'feature', 'hotfix', 'release']
-        organization: 'Mariano-SI'
-        project: 'Teste'
-        repository: 'Teste'
+        branchNames: ["develop", "qa", "uat"]
+        organization: ${{ parseRepoUrl(parameters.repoUrl).organization }}
+        project: ${{ parseRepoUrl(parameters.repoUrl).project }}
+        repository:  ${{ parseRepoUrl(parameters.repoUrl).repo }}
 
     
     - id: Register 
