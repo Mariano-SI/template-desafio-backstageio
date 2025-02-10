@@ -60,9 +60,9 @@ spec:
       action: azure-repos:branches:create
       input:
         branchNames: ["develop", "qa", "uat"]
-        organization: ${{ parseRepoUrl(parameters.repoUrl).organization }}
-        project: ${{ parseRepoUrl(parameters.repoUrl).project }}
-        repository:  ${{ parseRepoUrl(parameters.repoUrl).repo }}
+        organization: ${{ parameters.repoUrl.organization }}
+        project: ${{ parameters.repoUrl.project }}
+        repository: ${{ parameters.repoUrl.repo }}
 
     
     - id: Register 
