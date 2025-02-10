@@ -54,6 +54,16 @@ spec:
         repoUrl: ${{ parameters.repoUrl }}
         description: This is ${{ parameters.projectName }}
     
+    - id: create-custom-branches
+      name: Create Custom Branches
+      action: azure-repos:branches:create
+      input:
+        branches: ['main', 'develop', 'feature', 'hotfix', 'release']
+        organization: 'Mariano-SI'
+        project: 'Teste'
+        repository: 'Teste'
+
+    
     - id: Register 
       name: Register
       action: catalog:register
