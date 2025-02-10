@@ -1,0 +1,2 @@
+{ "projeto": "${{ values.projectName }}", "serviço": "${{ values.serviceName }}" }
+
