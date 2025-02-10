@@ -58,7 +58,7 @@ spec:
       name: Create Custom Branches
       action: azure-repos:branches:create
       input:
-        branches: ['main', 'develop', 'feature', 'hotfix', 'release']
+        branchNames: ['main', 'develop', 'feature', 'hotfix', 'release']
         organization: 'Mariano-SI'
         project: 'Teste'
         repository: 'Teste'
