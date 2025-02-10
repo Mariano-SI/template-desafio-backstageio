@@ -51,12 +51,8 @@ spec:
       name: Publish to Azure DevOps
       action: publish:azure
       input:
-        allowedHosts: ['dev.azure.com']
         repoUrl: ${{ parameters.repoUrl }}
-        organization: ${{ parseRepoUrl(parameters.repoUrl).organization }}
-        project: ${{ parseRepoUrl(parameters.repoUrl).project }}
-        repo: ${{ parseRepoUrl(parameters.repoUrl).repo }}
-        description: This is ${{ parameters.description }}
+        description: This is ${{ parameters.projectName }}
     
     - id: Register 
       name: Register
